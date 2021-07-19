@@ -11,10 +11,10 @@ namespace PPPAttendance
         public App()
         {
             InitializeComponent();
-            
+
             XF.Material.Forms.Material.Init(this);
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

@@ -21,5 +21,9 @@
       <Folder Include="Services" />
       <Folder Include="Views" />
       <Folder Include="ViewModels" />
+      <Folder Include="Views\" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Views\" />
     </ItemGroup>
 </Project>

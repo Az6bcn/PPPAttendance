@@ -11,7 +11,7 @@
             <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#EAEAEA" IsClickable="True" BorderColor="#ff5349" HeightRequest="80" VerticalOptions="CenterAndExpand">
                 <StackLayout>
                     <Label Text="RCCG PPP" HorizontalOptions="Center"  FontSize="Large"/>
-                    <Label Text="{x:Binding today}" x:Name="labelDate" HorizontalOptions="Center"  FontSize="Large" />
+                    <Label Text="{Binding today}" x:Name="labelDate" HorizontalOptions="Center"  FontSize="Large" />
                 </StackLayout>
             </material:MaterialCard>
         </StackLayout>

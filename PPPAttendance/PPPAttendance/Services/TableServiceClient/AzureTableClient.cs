@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Azure;
 using Azure.Data.Tables;
 using Azure.Data.Tables.Models;
+using PPPAttendance.Dtos;
 using PPPAttendance.Models;
 
 namespace PPPAttendance.Services.TableServiceClient
@@ -14,8 +17,8 @@ namespace PPPAttendance.Services.TableServiceClient
 
         public AzureTableClient()
         {
-            _tableServiceClient = GetTableServiceClient();
-            CreateTableIfNotExist();
+            // _tableServiceClient = GetTableServiceClient();
+            // CreateTableIfNotExist();
 
             _tableClient = GetTableClient();
             CreateTableInService();
@@ -45,16 +48,31 @@ namespace PPPAttendance.Services.TableServiceClient
                                                             TableSettings.AccountKey));
 
         private void CreateTableInService()
-            => _tableClient.Create();
+            => _tableClient.CreateIfNotExists();
 
-        public async Task<Response> AddEntityAsync(Attendance entity)
-            => await _tableClient.AddEntityAsync<Attendance>(entity);
+        public async Task<Response> AddEntityAsync(AttendanceEntity entity)
+            => await _tableClient.AddEntityAsync<AttendanceEntity>(entity);
 
-        public  AsyncPageable<Attendance> GetEntity(Attendance entity)
+        public async Task<Response> UpdateEntityAsync(AttendanceEntity entity)
+            => await _tableClient.UpdateEntityAsync<AttendanceEntity>(entity,
+                                                                      ETag.All,
+                                                                      TableUpdateMode.Replace);
+
+        public async Task<AttendanceEntity?> GetEntity(AttendanceEntity entity)
         {
-            var response =  _tableClient.QueryAsync<Attendance>(a 
-                                                                    => a.Date == entity.Date);
-            return response;
+            var response = _tableClient
+                .Query<AttendanceEntity>(a => a.Date.Date == entity.Date.Date
+                                              && a.Service == entity.Service && a.RowKey == entity.RowKey);
+
+            if (!response.Any())
+                return default;
+
+            var found = response.FirstOrDefault();
+
+            if (found is null)
+                return default;
+
+            return found;
         }
     }
 }

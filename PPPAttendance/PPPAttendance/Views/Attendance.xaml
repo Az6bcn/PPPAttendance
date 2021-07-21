@@ -1,57 +1,69 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
     x:Class="PPPAttendance.Views.Attendance"
     Title="Attendance">
 
     <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
 
         <StackLayout Orientation="Horizontal" Margin="50">
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#EAEAEA" IsClickable="True" BorderColor="#ff5349" HeightRequest="80" VerticalOptions="CenterAndExpand">
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#EAEAEA" IsClickable="True" BorderColor="#ff5349"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand">
                 <StackLayout>
-                    <Label Text="RCCG PPP" HorizontalOptions="Center"  FontSize="Large"/>
-                    <Label Text="{Binding today}" x:Name="labelDate" HorizontalOptions="Center"  FontSize="Large" />
+                    <Label Text="RCCG PPP" HorizontalOptions="Center" FontSize="Large" />
+                    <Label Text="{Binding today}" x:Name="labelDate" HorizontalOptions="Center" FontSize="Large" />
                 </StackLayout>
             </material:MaterialCard>
         </StackLayout>
 
-        <FlexLayout Direction="Row">
-
-
-
-        </FlexLayout>
+        <FlexLayout Direction="Row" />
 
         <StackLayout Orientation="Horizontal">
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Man +" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand" Clicked="ManPlus_OnClicked">
+                <Label Text="Man +" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
 
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True" BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Man -" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand" Clicked="ManMinus_OnClicked">
+                <Label Text="Man -" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
 
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Woman +" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand">
+                <Label Text="Woman +" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
 
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Woman -" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand">
+                <Label Text="Woman -" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
 
         </StackLayout>
 
         <StackLayout Orientation="Horizontal">
 
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Child +" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#2196F3" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand">
+                <Label Text="Child +" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
 
-            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand">
-                <Label Text="Child -" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+            <material:MaterialCard CornerRadius="5" Elevation="1" Margin="10" HorizontalOptions="FillAndExpand"
+                                   HasShadow="True" BackgroundColor="#ff5349" IsClickable="True" BorderColor="#2196F3"
+                                   HeightRequest="80" VerticalOptions="CenterAndExpand">
+                <Label Text="Child -" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
             </material:MaterialCard>
         </StackLayout>
     </StackLayout>

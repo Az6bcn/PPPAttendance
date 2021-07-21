@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PPPAttendance"
@@ -7,18 +8,24 @@
              Title="Home">
 
     <StackLayout Orientation="Vertical" Spacing="5" Margin="10">
-        <Label Text="RCCG PPP Attendance" HorizontalOptions="Center"  FontSize="Medium"/>
+        <Label Text="RCCG PPP Attendance" HorizontalOptions="Center" FontSize="Medium" />
 
 
-        <ui:MaterialCard CornerRadius="5" Elevation="8" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="EndAndExpand" Clicked="OnService_Clicked">
-            <Label Text="First Service" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+        <ui:MaterialCard CornerRadius="5" Elevation="8" HorizontalOptions="FillAndExpand" HasShadow="True"
+                         BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80"
+                         VerticalOptions="EndAndExpand" Clicked="OnService_Clicked" x:Name="First">
+            <Label Text="First Service" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
         </ui:MaterialCard>
 
-        <ui:MaterialCard CornerRadius="5" Elevation="1" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="CenterAndExpand" Clicked="OnService_Clicked">
-            <Label Text="Second Service" HorizontalOptions="Center" FontSize="Large"  VerticalOptions="Center"/>
+        <ui:MaterialCard CornerRadius="5" Elevation="1" HorizontalOptions="FillAndExpand" HasShadow="True"
+                         BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80"
+                         VerticalOptions="CenterAndExpand" Clicked="OnService_Clicked" x:Name="Second">
+            <Label Text="Second Service" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
         </ui:MaterialCard>
 
-        <ui:MaterialCard CornerRadius="2" Elevation="1" HorizontalOptions="FillAndExpand" HasShadow="True"   BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80" VerticalOptions="StartAndExpand" Clicked="OnReports_Clicked">
+        <ui:MaterialCard CornerRadius="2" Elevation="1" HorizontalOptions="FillAndExpand" HasShadow="True"
+                         BackgroundColor="#e2e2e2" IsClickable="True" BorderColor="#2196F3" HeightRequest="80"
+                         VerticalOptions="StartAndExpand" Clicked="OnReports_Clicked">
             <Label Text="Reports" HorizontalOptions="Center" FontSize="Large" VerticalOptions="Center" />
         </ui:MaterialCard>
 

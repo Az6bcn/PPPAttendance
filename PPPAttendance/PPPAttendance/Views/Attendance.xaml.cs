@@ -97,15 +97,15 @@ namespace PPPAttendance.Views
 
             if (entityInDb is null)
             {
-                entity.Men = 1;
+                entity.Women = 1;
                 await client.AddEntityAsync(entity);
             }
 
             if (entityInDb is not null)
             {
-                entityInDb.Men += 1;
+                entityInDb.Women += 1;
                 await client.UpdateEntityAsync(entityInDb);
-                await MaterialDialog.Instance.SnackbarAsync(message: "Man Counted, + 1", 
+                await MaterialDialog.Instance.SnackbarAsync(message: "Woman Counted, + 1", 
                                                             msDuration: MaterialSnackbar.DurationShort,
                                                             new MaterialSnackbarConfiguration
                                                             {
@@ -129,10 +129,10 @@ namespace PPPAttendance.Views
 
             if (entityInDb is not null)
             {
-                entityInDb.Men -= 1;
+                entityInDb.Women -= 1;
                 await client.UpdateEntityAsync(entityInDb);
                 
-                await MaterialDialog.Instance.SnackbarAsync(message: "Man deducted, - 1", 
+                await MaterialDialog.Instance.SnackbarAsync(message: "Woman deducted, - 1", 
                                                             msDuration: MaterialSnackbar.DurationShort,
                                                             new MaterialSnackbarConfiguration
                                                             {
@@ -152,15 +152,15 @@ namespace PPPAttendance.Views
 
             if (entityInDb is null)
             {
-                entity.Men = 1;
+                entity.Children = 1;
                 await client.AddEntityAsync(entity);
             }
 
             if (entityInDb is not null)
             {
-                entityInDb.Men += 1;
+                entityInDb.Children += 1;
                 await client.UpdateEntityAsync(entityInDb);
-                await MaterialDialog.Instance.SnackbarAsync(message: "Man Counted, + 1", 
+                await MaterialDialog.Instance.SnackbarAsync(message: "Child Counted, + 1", 
                                                             msDuration: MaterialSnackbar.DurationShort,
                                                             new MaterialSnackbarConfiguration
                                                             {
@@ -184,10 +184,10 @@ namespace PPPAttendance.Views
 
             if (entityInDb is not null)
             {
-                entityInDb.Men -= 1;
+                entityInDb.Children -= 1;
                 await client.UpdateEntityAsync(entityInDb);
                 
-                await MaterialDialog.Instance.SnackbarAsync(message: "Man deducted, - 1", 
+                await MaterialDialog.Instance.SnackbarAsync(message: "Child deducted, - 1", 
                                                             msDuration: MaterialSnackbar.DurationShort,
                                                             new MaterialSnackbarConfiguration
                                                             {

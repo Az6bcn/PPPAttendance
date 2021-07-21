@@ -69,10 +69,10 @@ namespace PPPAttendance.Views
 
             var entityInDb = await client.GetEntity(entity);
 
-            if (entityInDb is null)
+            if (entityInDb is not null && entityInDb.Men == 0)
                 return;
 
-            if (entityInDb is not null)
+            if (entityInDb is not null && entityInDb.Men > 0)
             {
                 entityInDb.Men -= 1;
                 await client.UpdateEntityAsync(entityInDb);
@@ -124,10 +124,10 @@ namespace PPPAttendance.Views
 
             var entityInDb = await client.GetEntity(entity);
 
-            if (entityInDb is null)
+            if (entityInDb is not null && entityInDb.Women == 0)
                 return;
 
-            if (entityInDb is not null)
+            if (entityInDb is not null && entityInDb.Women > 0)
             {
                 entityInDb.Women -= 1;
                 await client.UpdateEntityAsync(entityInDb);
@@ -179,10 +179,10 @@ namespace PPPAttendance.Views
 
             var entityInDb = await client.GetEntity(entity);
 
-            if (entityInDb is null)
+            if (entityInDb is not null && entityInDb.Children == 0)
                 return;
 
-            if (entityInDb is not null)
+            if (entityInDb is not null && entityInDb.Children > 0)
             {
                 entityInDb.Children -= 1;
                 await client.UpdateEntityAsync(entityInDb);

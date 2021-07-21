@@ -74,5 +74,28 @@ namespace PPPAttendance.Services.TableServiceClient
 
             return found;
         }
+
+        public async Task<IEnumerable<AttendanceReportDto>> GetReport(DateTime startDate,
+                                                                      DateTime endDate)
+        {
+            var response = _tableClient
+                           .Query<AttendanceEntity>(a => a.Date >= startDate)
+                           .ToList();
+
+            var responseFiltered =
+                response.Where(x => x.Date.Date <= endDate.Date)
+                        .Select(entity => new AttendanceReportDto
+                        {
+                            Men = entity.Men,
+                            Women = entity.Women,
+                            Children = entity.Children,
+                            Service = entity.Service,
+                            Date = entity.Date,
+                            Total = entity.Women + entity.Men + entity.Children
+                        })
+                        .ToList();
+
+            return responseFiltered;
+        }
     }
 }

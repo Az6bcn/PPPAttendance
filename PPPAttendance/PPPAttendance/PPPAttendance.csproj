@@ -18,6 +18,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="..\PPPAttendance.Android\Resources\mipmap-xhdpi">
+        <Link>Services\TableServiceClient\mipmap-xhdpi</Link>
+      </Folder>
       <Folder Include="Commands" />
       <Folder Include="Mappings" />
       <Folder Include="Services" />

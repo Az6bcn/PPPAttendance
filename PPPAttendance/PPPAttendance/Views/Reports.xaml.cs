@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Microcharts;
 using PPPAttendance.Dtos;
 using PPPAttendance.Services.TableServiceClient;
@@ -32,11 +33,14 @@ namespace PPPAttendance.Views
 
             var report = await client.GetReport(startDate, endDate);
 
-            var chart = new LineChart() {Entries = GetEntries(report)};
+            if (report.Any())
+            {
+                var chart = new LineChart() { Entries = GetEntries(report) };
 
-            chartLabel.IsVisible = true;
+                chartLabel.IsVisible = true;
 
-            this.chartView.Chart = chart;
+                this.chartView.Chart = chart;
+            }
         }
 
         private ChartEntry[] GetEntries(IEnumerable<AttendanceReportDto> report)

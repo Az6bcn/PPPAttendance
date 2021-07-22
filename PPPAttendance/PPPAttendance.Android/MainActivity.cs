@@ -9,6 +9,7 @@ using Android.OS;
 namespace PPPAttendance.Android
 {
     [Activity(Label = "PPPAttendance",
+                 Icon = "@mipmap/ppp_android_icon",
                  Theme = "@style/MainTheme",
                  MainLauncher = true,
                  ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -21,9 +22,9 @@ namespace PPPAttendance.Android
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            
+
             XF.Material.Droid.Material.Init(this, savedInstanceState);
-            
+
             LoadApplication(new App());
         }
     }

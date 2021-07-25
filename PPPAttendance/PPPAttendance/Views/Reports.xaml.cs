@@ -39,6 +39,7 @@ namespace PPPAttendance.Views
 
                 chartLabel.IsVisible = true;
 
+                chart.LabelTextSize = 10;
                 this.chartView.Chart = chart;
             }
         }

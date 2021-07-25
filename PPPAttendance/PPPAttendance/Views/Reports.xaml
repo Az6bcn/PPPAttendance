@@ -41,7 +41,7 @@
                    HorizontalTextAlignment="Center" 
                    IsVisible="False"
                    x:Name="chartLabel"/>
-            <forms:ChartView x:Name="chartView" HeightRequest="300" />
+            <forms:ChartView x:Name="chartView" HeightRequest="300"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

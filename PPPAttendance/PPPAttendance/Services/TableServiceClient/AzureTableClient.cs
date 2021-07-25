@@ -93,6 +93,7 @@ namespace PPPAttendance.Services.TableServiceClient
                             Date = entity.Date,
                             Total = entity.Women + entity.Men + entity.Children
                         })
+                        .OrderBy(x => x.Date)
                         .ToList();
 
             return responseFiltered;

@@ -39,7 +39,7 @@ namespace PPPAttendance.Views
 
                 chartLabel.IsVisible = true;
 
-                chart.LabelTextSize = 10;
+                chart.LabelTextSize = 27;
                 this.chartView.Chart = chart;
             }
         }
@@ -75,7 +75,7 @@ namespace PPPAttendance.Views
                             new ChartEntry(value.Total)
                             {
                                 Label
-                                    = $"{nameof(value.Total)} - {value.Date.ToString("d", new CultureInfo("en-GB"))}",
+                                    = $"{nameof(value.Total)} - {value.Date.ToString("d", new CultureInfo("en-GB"))} ({value.Service})",
                                 Color = SKColor.Parse("#696969"),
                                 ValueLabel = value.Total.ToString(),
                             });
